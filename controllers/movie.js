@@ -43,7 +43,7 @@ module.exports.getMovies = async (req, res) => {
     const movies = await Movie.find();
 
     const formattedMovies = movies.map(movie => ({
-      id: movie._id,
+      _id: movie._id,
       title: movie.title,
       director: movie.director,
       year: movie.year,
@@ -72,7 +72,7 @@ module.exports.getMovieById = async (req, res) => {
     }
 
     const formattedMovie = {
-      id: movie._id,
+      _id: movie._id,
       title: movie.title,
       director: movie.director,
       year: movie.year,
@@ -107,7 +107,7 @@ module.exports.updateMovie = async (req, res) => {
     }
 
     const formattedMovie = {
-      id: updatedMovie._id,
+      _id: updatedMovie._id,
       title: updatedMovie.title,
       director: updatedMovie.director,
       year: updatedMovie.year,
